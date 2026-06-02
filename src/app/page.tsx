@@ -244,14 +244,14 @@ export default function PixelHubLanding() {
             variants={{ visible: { transition: { staggerChildren: 0.08 } } }}
           >
             {[
-              { icon: 'storefront', label: 'Comercios locales' },
-              { icon: 'engineering', label: 'Servicios profesionales' },
-              { icon: 'medical_services', label: 'Clínicas' },
-              { icon: 'restaurant', label: 'Gastronomía' },
-              { icon: 'school', label: 'Educación' },
-              { icon: 'event', label: 'Eventos' },
-              { icon: 'apartment', label: 'Inmobiliaria' },
-              { icon: 'add_circle', label: 'Cualquier sector' },
+              { icon: 'storefront', label: 'Comercios locales', dur: 3.2, del: 0.0 },
+              { icon: 'engineering', label: 'Servicios profesionales', dur: 4.1, del: 0.8 },
+              { icon: 'medical_services', label: 'Clínicas', dur: 3.8, del: 1.6 },
+              { icon: 'restaurant', label: 'Gastronomía', dur: 4.5, del: 0.3 },
+              { icon: 'school', label: 'Educación', dur: 3.5, del: 1.2 },
+              { icon: 'event', label: 'Eventos', dur: 4.2, del: 0.6 },
+              { icon: 'apartment', label: 'Inmobiliaria', dur: 3.9, del: 1.8 },
+              { icon: 'add_circle', label: 'Cualquier sector', dur: 4.8, del: 0.9 },
             ].map((item) => (
               <motion.div
                 key={item.icon}
@@ -261,7 +261,7 @@ export default function PixelHubLanding() {
                 <motion.div
                   className="w-20 h-20 rounded-full bg-deep-contrast flex items-center justify-center mb-4 border border-white/5"
                   animate={{ y: [0, -6, 0] }}
-                  transition={{ duration: 3 + Math.random() * 2, repeat: Infinity, ease: 'easeInOut', delay: Math.random() * 2 }}
+                  transition={{ duration: item.dur, repeat: Infinity, ease: 'easeInOut', delay: item.del }}
                 >
                   <span className="material-symbols-outlined text-primary text-3xl">{item.icon}</span>
                 </motion.div>
@@ -880,11 +880,13 @@ function renderCell(value: boolean | string, isPro: boolean) {
 }
 
 function useIsMobile() {
-  const [isMobile, setIsMobile] = useState(true)
+  const [isMobile, setIsMobile] = useState(() => {
+    if (typeof window === 'undefined') return true
+    return window.matchMedia('(max-width: 767px)').matches
+  })
 
   useEffect(() => {
     const mq = window.matchMedia('(max-width: 767px)')
-    setIsMobile(mq.matches)
     const handler = (e: MediaQueryListEvent) => setIsMobile(e.matches)
     mq.addEventListener('change', handler)
     return () => mq.removeEventListener('change', handler)
