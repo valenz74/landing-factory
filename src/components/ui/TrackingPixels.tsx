@@ -2,6 +2,7 @@
 
 import Script from 'next/script'
 import type { PixelConfig, PixelProvider } from '@/lib/pixels'
+import { trackingAllowed } from './CookieConsent'
 
 const SCRIPTS: Record<PixelProvider, (id: string) => React.ReactNode> = {
   meta: (id) => (
@@ -100,6 +101,7 @@ const SCRIPTS: Record<PixelProvider, (id: string) => React.ReactNode> = {
 
 export default function TrackingPixels({ pixels }: { pixels?: PixelConfig | null }) {
   if (!pixels) return null
+  if (!trackingAllowed()) return null
 
   const entries = Object.entries(pixels).filter(
     (entry): entry is [PixelProvider, string] => {

@@ -3,6 +3,7 @@ import { Montserrat } from "next/font/google"
 import "./globals.css"
 import { buildMetadata } from "@/lib/metadata"
 import TrackingPixels from "@/components/ui/TrackingPixels"
+import CookieConsent from "@/components/ui/CookieConsent"
 import type { PixelConfig } from "@/lib/pixels"
 
 const montserrat = Montserrat({
@@ -39,6 +40,7 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col" suppressHydrationWarning>
         {children}
         <TrackingPixels pixels={mainPixels} />
+        <CookieConsent />
       </body>
     </html>
   )

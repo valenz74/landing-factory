@@ -211,7 +211,7 @@ export default function PixelHubLanding() {
             {[
               { id: 'medisalud', thumbSrc: '/images/portfolio/clinica-medisalud-portada.webp', src: '/images/portfolio/medisalud.webp', name: 'Clínica Medisalud' },
               { id: 'consultores', thumbSrc: '/images/portfolio/consultores-asociados-portada.webp', src: '/images/portfolio/consultores-asociados.webp', name: 'Consultores Asociados' },
-              { id: 'constructora', thumbSrc: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBkRmUko_Zok7hV-ubyG_l4npoXbgNnSlppoIArakZMEdo3x9y1zmacJyhCdKDOWuP3wIBasDs9Aj6BRWW6JFkOm3D2k8kV2C144sS_Dw5YVRg4_prWgSUUXKf-iLlJcUluzoAzymAcJ-gZBvUT4RgslhUknwGZ1Nrd14NL856pup9Nb8M9YNKfTVICHa-fCryx7kDBh3yGBvYTLpfwWLV5oOqiiBLfgylbyKxEwlcenJ9GE-hYkv-mYy4-DAbNHLGa0yucR8VJ2SA', src: '/images/portfolio/constructora-vargas.webp', name: 'Constructora Vargas', link: '/constructora-vargas' },
+              { id: 'constructora', thumbSrc: '/images/portfolio/constructora-vargas-portada.webp', src: '/images/portfolio/constructora-vargas.webp', name: 'Constructora Vargas', link: '/constructora-vargas' },
             ].map((item) => (
               <motion.div
                 key={item.id}
