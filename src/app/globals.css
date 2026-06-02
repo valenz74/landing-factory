@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-montserrat), system-ui, sans-serif;
+}
+
+::selection {
+  background-color: #b0c6ff;
+  color: #0B0F2B;
+}
+
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 48;
+}
+
+.glass-card {
+  background: rgba(4, 92, 211, 0.1);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(176, 198, 255, 0.1);
+}
+
+.pricing-table-container {
+  overflow-x: auto;
+}
+
+.pricing-table-container table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.pricing-table-container th,
+.pricing-table-container td {
+  padding: 16px;
+  text-align: left;
+  border-bottom: 1px solid rgba(176, 198, 255, 0.1);
+}
+
+.check-icon {
+  color: #4ade80;
+}
+
+.cross-icon {
+  color: #f87171;
+}
