@@ -33,10 +33,11 @@ npx tsc --noEmit # Type check
 - **Rama principal:** `main`
 - **Origin:** `git@github.com:valenz74/landing-factory.git`
 
-## Deploy (pendiente)
+## Deploy
 - [x] Hacer commit de los cambios actuales
 - [x] Push a GitHub
-- [ ] Conectar Cloudflare Pages con el repo de GitHub
+- [x] Conectar Cloudflare Pages con el repo de GitHub
+- [x] URL: https://landing-factory.pages.dev
 - [ ] Configurar `NEXT_PUBLIC_*` en dashboard de Cloudflare Pages
 - [ ] Definir dominio personalizado (opcional)
 
@@ -180,11 +181,13 @@ src/
 - [ ] Agregar más mini-sitios
 
 ## Notas de la sesión (Junio 2026)
-- Migración de Vercel → Cloudflare Pages en proceso
+- Migración de Vercel → Cloudflare Pages completada
 - Favicon movido de `public/` a `app/` para manejo automático de Next.js
 - `.gitignore` corregido: `.env*` → `.env` para permitir trackear `.env.example`
 - URLs actualizadas de `hubdelandings.vercel.app` → `landing-factory.pages.dev` (placeholder)
 - `robots.ts` y `sitemap.ts` en `app/` fueron eliminados; reemplazados por `public/robots.txt` y `public/sitemap.xml` estáticos
+- Build fix: `CookieConsent.tsx` — reemplazado `useState(false)` + `useEffect` por `useState(() => ...)` para evitar error `set-state-in-effect`
+- Build fix: `page.tsx` — eliminadas funciones no usadas `SectionReveal` y `SectionRevealMotion`; limpiados parámetros `(item, i)` → `(item)` donde `i` no se usaba
 
 ## Cómo agregar un nuevo mini-sitio
 1. Crear carpeta `src/sites/tu-sitio/`
