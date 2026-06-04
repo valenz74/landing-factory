@@ -14,15 +14,6 @@ interface PortfolioItem {
   link?: string
 }
 
-function SectionReveal({ children, className = '', id }: { children: React.ReactNode; className?: string; id?: string }) {
-  const ref = useScrollReveal<HTMLElement>()
-  return (
-    <section ref={ref} className={className} id={id}>
-      {children}
-    </section>
-  )
-}
-
 export default function PixelHubLanding() {
   const [modalItem, setModalItem] = useState<PortfolioItem | null>(null)
 
@@ -327,7 +318,7 @@ export default function PixelHubLanding() {
               { num: '01', title: 'Cuéntanos', desc: 'Agendamos una breve llamada para entender tu negocio y tus objetivos.' },
               { num: '02', title: 'Diseñamos', desc: 'Nuestro equipo creativo crea tu landing optimizada y personalizada.' },
               { num: '03', title: 'Publicamos', desc: 'Lanzamos tu sitio al mundo y empezamos a captar leads.' },
-            ].map((item, i) => (
+            ].map((item) => (
               <motion.div
                 key={item.num}
                 variants={{ hidden: { opacity: 0, x: -20 }, visible: { opacity: 1, x: 0, transition: { duration: 0.4, ease: 'easeOut' } } }}
@@ -691,21 +682,6 @@ function MeshGradient() {
         style={{ top: '40%', right: '20%' }}
       />
     </div>
-  )
-}
-
-function SectionRevealMotion({ children, className = '', id }: { children: React.ReactNode; className?: string; id?: string }) {
-  return (
-    <motion.section
-      initial={{ opacity: 0, y: 40 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: '-80px' }}
-      transition={{ duration: 0.6, ease: 'easeOut' }}
-      className={className}
-      id={id}
-    >
-      {children}
-    </motion.section>
   )
 }
 

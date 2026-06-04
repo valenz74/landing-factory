@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 
 const CONSENT_KEY = 'pixelhub-consent'
@@ -32,14 +32,10 @@ export function trackingAllowed(): boolean {
 }
 
 export default function CookieConsent() {
-  const [visible, setVisible] = useState(false)
-
-  useEffect(() => {
+  const [visible] = useState(() => {
     const data = getConsent()
-    if (!data || isExpired(data)) {
-      setVisible(true)
-    }
-  }, [])
+    return !data || isExpired(data)
+  })
 
   function handleAccept() {
     localStorage.setItem(CONSENT_KEY, JSON.stringify({ choice: 'accepted', timestamp: Date.now() }))
