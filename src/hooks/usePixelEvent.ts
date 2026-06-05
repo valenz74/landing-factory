@@ -1,3 +1,6 @@
+// PixelHub — Hook for tracking pixel events
+// Owner: Jose Valenzuela — josevalenzuelamolina@proton.me
+
 'use client'
 
 import { useCallback } from 'react'

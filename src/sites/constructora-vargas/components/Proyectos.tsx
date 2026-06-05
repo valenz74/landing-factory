@@ -1,56 +1,86 @@
-import { config } from '../config'
-
-const proyectos = [
-  {
-    title: 'Edificio Torres del Sol',
-    category: 'Residencial',
-    desc: 'Conjunto de 48 departamentos con áreas verdes y piscina.',
-  },
-  {
-    title: 'Centro Comercial Plaza Norte',
-    category: 'Comercial',
-    desc: '30 locales comerciales con estacionamiento subterráneo.',
-  },
-  {
-    title: 'Planta Industrial Alimentos',
-    category: 'Industrial',
-    desc: 'Nave de 5000 m² con estándares sanitarios internacionales.',
-  },
-  {
-    title: 'Condominio Los Olivos',
-    category: 'Residencial',
-    desc: '20 casas con diseño moderno y eficiencia energética.',
-  },
-]
-
 export function Proyectos() {
   return (
-    <section id="proyectos" className="py-24 px-4" style={{ backgroundColor: '#f8fafc' }}>
-      <div className="max-w-5xl mx-auto">
-        <h2 className="text-3xl sm:text-4xl font-bold text-center text-zinc-900 mb-4">
-          Proyectos Destacados
-        </h2>
-        <p className="text-zinc-500 text-center max-w-xl mx-auto mb-16">
-          Conoce algunos de los proyectos que hemos realizado para nuestros clientes.
-        </p>
-        <div className="grid sm:grid-cols-2 gap-6">
-          {proyectos.map((p) => (
-            <div
-              key={p.title}
-              className="bg-white rounded-2xl border border-zinc-100 p-6 hover:shadow-lg transition-all"
-            >
-              <span
-                className="text-xs font-semibold px-3 py-1 rounded-full"
-                style={{ backgroundColor: `${config.theme.primary}15`, color: config.theme.primary }}
-              >
-                {p.category}
-              </span>
-              <h3 className="text-xl font-semibold text-zinc-900 mt-3 mb-2">{p.title}</h3>
-              <p className="text-zinc-500 text-sm">{p.desc}</p>
-            </div>
-          ))}
+    <section className="bg-dark-gray py-[80px]">
+      <div className="max-w-[1200px] mx-auto text-white" style={{ padding: '0 64px' }}>
+        <div className="flex flex-col md:flex-row justify-between items-center mb-[48px]">
+          <h2 className="uppercase mb-[24px] md:mb-0" style={{
+            fontFamily: 'Bebas Neue',
+            fontSize: '48px',
+            lineHeight: '48px',
+            letterSpacing: '0.02em',
+            fontWeight: 400,
+          }}>Proyectos destacados</h2>
+          <button className="border border-white/30 px-[48px] py-3 hover:bg-white hover:text-dark-gray transition-all uppercase" style={{
+            fontFamily: 'Montserrat',
+            fontSize: '16px',
+            lineHeight: '16px',
+            fontWeight: 600,
+          }}>
+            Ver todos los proyectos
+          </button>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-[24px]">
+          <ProjectCard
+            colSpan="md:col-span-8"
+            title="Altos del Sol - Bogotá"
+            subtitle="Residencial Premium | Finalizado"
+            height="400px"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCSG5hBUmjcjjWC5FLl-dTDj3FcWFZA5M0PUGAZe_6zo58pmZU8j0PMA5e5Oa5i21Y1zaAmjMuOfdlqYLRXCH116MTNsdpT7SoHas0j5NNbamQqm2pJvUdFpxHLneJ3pIUoLoupX-bB4tByXNlBh88R3lVvY7W2td6sZqEYGy7NgfHFArzpNQfuWNSU8daqfKGOGZWLFCOozrETgAmEF-fzm73qd_TG4seYSqlTzMmLvuRrWoJET9C95qjgMu6O752F_k2pQtULeI"
+          />
+          <ProjectCard
+            colSpan="md:col-span-4"
+            title="Plaza Mayor - Medellín"
+            subtitle="Comercial | En Desarrollo"
+            height="400px"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAslcZIyZrXLb9u4aclqsrm1oy2P_xHZ-hng_vQt3RGUwJOBGCttklbhvwXiA5BTWgs3xoPdbw5i28pOjVa969H12pcnrraGGDmOxUGkJr12UJKGs0VFrdm8ozyVjUhdTjyk1fNlXeL7ymxF4QqymCtgRgc-RtcRttda0Jf3CHx_ntr1olz6Qsc-vd-LTvknFr614FLLzjZvvxnTjQjfxzahVGVigDBG-by9jNOtPfZhT5SciDXuDXf8J3ZlqPVtSd8dcaBFyz9ihQ"
+          />
+          <ProjectCard
+            colSpan="md:col-span-12"
+            title="Villa El Bosque - Cali"
+            subtitle="Residencial de Lujo | Finalizado"
+            height="300px"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWurIAwORLwxWJ1Ni0qf6oGrETbzfa3Cd2N0SXx5CvEK5JW_mt83bDJOXw1-MLsbRHXUGPxket9rBv4iVzBZ0OGOfRpFWROfdbTz-6oQg8HZoG0uz0YEFEK2-j3hmLDdI-PMt1gKz8iq4npryUfx2BPf9LZYzvzbYLVA2GaAMl84rr7tHtj5ntBTv8qZ9Hrai6tcWkKddO7j4PITyg-xTVBAJMDFrf4HjeJ2ocXoDVb97o4jtkGaZ3GWgWfCiP17G9iNGl0U-U1xg"
+          />
         </div>
       </div>
     </section>
+  )
+}
+
+function ProjectCard({
+  colSpan,
+  title,
+  subtitle,
+  height,
+  src,
+}: {
+  colSpan: string
+  title: string
+  subtitle: string
+  height: string
+  src: string
+}) {
+  return (
+    <div className={`${colSpan} group relative overflow-hidden`} style={{ height }}>
+      <img
+        alt={title}
+        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+        src={src}
+      />
+      <div className="absolute bottom-0 left-0 right-0 bg-dark-gray/90 transform translate-y-2 group-hover:translate-y-0 transition-all border-l-4" style={{ borderColor: '#944a00', padding: '24px' }}>
+        <h4 style={{
+          fontFamily: 'Montserrat',
+          fontSize: '24px',
+          lineHeight: '32px',
+          fontWeight: 700,
+        }}>{title}</h4>
+        <p className="uppercase opacity-80" style={{
+          fontFamily: 'Montserrat',
+          fontSize: '14px',
+          lineHeight: '20px',
+          fontWeight: 600,
+        }}>{subtitle}</p>
+      </div>
+    </div>
   )
 }

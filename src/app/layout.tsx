@@ -1,3 +1,6 @@
+// PixelHub — Mini-site generator & landing page factory
+// Owner: Jose Valenzuela — josevalenzuelamolina@proton.me
+
 import type { Metadata } from "next"
 import { Montserrat } from "next/font/google"
 import "./globals.css"

@@ -1,3 +1,6 @@
+// PixelHub — Floating WhatsApp button
+// Owner: Jose Valenzuela — josevalenzuelamolina@proton.me
+
 'use client'
 
 export default function WhatsAppButton() {

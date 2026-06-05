@@ -1,3 +1,6 @@
+// PixelHub — Dynamic page loader for client mini-sites (DO NOT EDIT)
+// Owner: Jose Valenzuela — josevalenzuelamolina@proton.me
+
 import { getSiteLoader, getSiteSlugs } from '@/lib/sites'
 import { notFound } from 'next/navigation'
 

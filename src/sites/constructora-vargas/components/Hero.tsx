@@ -1,47 +1,116 @@
-import { config } from '../config'
-
 export function Hero() {
   return (
-    <section
-      className="min-h-screen flex items-center justify-center px-4 relative overflow-hidden"
-      style={{ backgroundColor: '#f8fafc' }}
-    >
+    <section className="relative h-[90vh] flex items-center justify-center overflow-hidden">
       <div
-        className="absolute inset-0 opacity-5"
+        className="absolute inset-0 bg-cover bg-center"
         style={{
-          backgroundImage: `radial-gradient(circle at 25% 50%, ${config.theme.primary} 0%, transparent 50%)`,
+          backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuBz794Sar_sduF73dHjnG6Uhzd2W00b-1L8ZXF1SZz9zaNRr8qb-IUtNMx20fuLzStl8g3h6hw-f9yvLrBzsTG6QZeVFj3_gkTLAcBqijQolmxtAIoCrDHgx45QD4mDpt6moLio-FFxR2ri6e-zUIkKp9MUpvUJTZadTphX_KQl0B8JGgSZHP_b8WAqg4XsA8Z7HWTFXRHzI5lLOVMzoyBrJ9jrxaqdXZv0BvSDKY361wUDySb4wWDWic7fSQSrOniYNExdmmOfOl0')",
         }}
-      />
-      <div className="max-w-4xl mx-auto text-center relative z-10 pt-16">
-        <div
-          className="inline-flex items-center gap-2 text-sm font-medium px-4 py-1.5 rounded-full mb-6"
-          style={{ backgroundColor: `${config.theme.primary}15`, color: config.theme.primary }}
+      >
+        <div className="absolute inset-0 hero-gradient" />
+      </div>
+      <div className="relative z-10 max-w-[1200px] w-full text-center text-white" style={{ padding: '0 64px' }}>
+        <h1
+          className="uppercase leading-none drop-shadow-md"
+          style={{
+            fontFamily: 'Bebas Neue',
+            fontSize: '72px',
+            lineHeight: '72px',
+            letterSpacing: '0.02em',
+            fontWeight: 400,
+            marginBottom: '24px',
+          }}
         >
-          <span className="w-2 h-2 rounded-full" style={{ backgroundColor: config.theme.secondary }} />
-          +20 años de experiencia
-        </div>
-        <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight leading-tight">
-          Construimos los espacios que{' '}
-          <span style={{ color: config.theme.primary }}>transforman tu futuro</span>
+          Construimos el hogar de tus sueños y los proyectos que transforman ciudades
         </h1>
-        <p className="mt-6 text-lg sm:text-xl text-zinc-500 max-w-2xl mx-auto leading-relaxed">
-          Proyectos residenciales, comerciales e industriales con los más altos estándares de calidad, seguridad y compromiso.
+        <p
+          className="max-w-2xl mx-auto opacity-90"
+          style={{
+            fontFamily: 'Open Sans',
+            fontSize: '18px',
+            lineHeight: '28px',
+            fontWeight: 400,
+            marginBottom: '48px',
+          }}
+        >
+          Con más de 20 años de experiencia, lideramos el sector con solidez, precisión técnica y un compromiso inquebrantable con la calidad constructiva.
         </p>
-        <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-          <a
-            href="#proyectos"
-            className="text-white px-8 py-3 rounded-full text-base font-semibold transition-colors shadow-lg"
-            style={{ backgroundColor: config.theme.primary }}
+        <div className="flex flex-wrap justify-center gap-[24px]" style={{ marginBottom: '80px' }}>
+          <button
+            className="text-white uppercase shadow-tonal"
+            style={{
+              backgroundColor: '#e67e22',
+              padding: '16px 48px',
+              borderRadius: '4px',
+              fontFamily: 'Montserrat',
+              fontSize: '16px',
+              lineHeight: '16px',
+              fontWeight: 600,
+            }}
+          >
+            Cotiza gratis
+          </button>
+          <button
+            className="text-white uppercase border border-white/20"
+            style={{
+              backgroundColor: '#2C3E50',
+              padding: '16px 48px',
+              borderRadius: '4px',
+              fontFamily: 'Montserrat',
+              fontSize: '16px',
+              lineHeight: '16px',
+              fontWeight: 600,
+            }}
           >
             Ver proyectos
-          </a>
-          <a
-            href="#contacto"
-            className="px-8 py-3 rounded-full text-base font-semibold border transition-colors"
-            style={{ borderColor: config.theme.primary, color: config.theme.primary }}
-          >
-            Solicitar cotización
-          </a>
+          </button>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-[24px] border-t border-white/20 max-w-4xl mx-auto" style={{ paddingTop: '48px' }}>
+          <div className="flex flex-col items-center">
+            <span style={{
+              fontFamily: 'Bebas Neue',
+              fontSize: '48px',
+              lineHeight: '48px',
+              letterSpacing: '0.02em',
+              fontWeight: 400,
+            }}>20+ años</span>
+            <span className="uppercase opacity-80" style={{
+              fontFamily: 'Montserrat',
+              fontSize: '14px',
+              lineHeight: '20px',
+              fontWeight: 600,
+            }}>De Trayectoria</span>
+          </div>
+          <div className="flex flex-col items-center">
+            <span style={{
+              fontFamily: 'Bebas Neue',
+              fontSize: '48px',
+              lineHeight: '48px',
+              letterSpacing: '0.02em',
+              fontWeight: 400,
+            }}>+500</span>
+            <span className="uppercase opacity-80" style={{
+              fontFamily: 'Montserrat',
+              fontSize: '14px',
+              lineHeight: '20px',
+              fontWeight: 600,
+            }}>Viviendas Entregadas</span>
+          </div>
+          <div className="flex flex-col items-center">
+            <span style={{
+              fontFamily: 'Bebas Neue',
+              fontSize: '48px',
+              lineHeight: '48px',
+              letterSpacing: '0.02em',
+              fontWeight: 400,
+            }}>10 Años</span>
+            <span className="uppercase opacity-80" style={{
+              fontFamily: 'Montserrat',
+              fontSize: '14px',
+              lineHeight: '20px',
+              fontWeight: 600,
+            }}>De Garantía</span>
+          </div>
         </div>
       </div>
     </section>

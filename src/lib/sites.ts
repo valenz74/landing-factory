@@ -1,3 +1,6 @@
+// PixelHub — Site registry and configuration types
+// Owner: Jose Valenzuela — josevalenzuelamolina@proton.me
+
 import type { Metadata } from 'next'
 import { ReactNode } from 'react'
 import type { PixelConfig } from './pixels'

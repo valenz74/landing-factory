@@ -1,3 +1,6 @@
+// PixelHub — Cookie consent banner with 15-day persistence
+// Owner: Jose Valenzuela — josevalenzuelamolina@proton.me
+
 'use client'
 
 import { useState } from 'react'

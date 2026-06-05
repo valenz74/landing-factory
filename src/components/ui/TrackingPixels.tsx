@@ -1,3 +1,6 @@
+// PixelHub — Tracking pixel script injector
+// Owner: Jose Valenzuela — josevalenzuelamolina@proton.me
+
 'use client'
 
 import Script from 'next/script'

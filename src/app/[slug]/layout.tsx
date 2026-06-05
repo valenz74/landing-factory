@@ -1,3 +1,6 @@
+// PixelHub — Dynamic layout for client mini-sites
+// Owner: Jose Valenzuela — josevalenzuelamolina@proton.me
+
 import { buildSiteMetadata, getSiteLoader } from '@/lib/sites'
 import { notFound } from 'next/navigation'
 import type { Metadata } from 'next'

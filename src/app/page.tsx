@@ -1,8 +1,10 @@
+// PixelHub — Main landing page
+// Owner: Jose Valenzuela — josevalenzuelamolina@proton.me
+
 'use client'
 
 import { useState, useEffect, useRef } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { useScrollReveal } from '@/hooks/useScrollReveal'
 import WhatsAppButton from '@/components/ui/WhatsAppButton'
 import Image from 'next/image'
 

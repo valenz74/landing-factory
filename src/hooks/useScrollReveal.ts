@@ -1,3 +1,6 @@
+// PixelHub — Scroll reveal animation hook
+// Owner: Jose Valenzuela — josevalenzuelamolina@proton.me
+
 'use client'
 
 import { useEffect, useRef } from 'react'
