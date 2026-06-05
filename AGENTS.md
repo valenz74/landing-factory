@@ -152,7 +152,8 @@ Config: SEO, colores, menú, footer, pixels. Layout propio. Componentes: Hero, S
 - [ ] Configurar `NEXT_PUBLIC_META_PIXEL`, `NEXT_PUBLIC_GA_ID`, etc. en Cloudflare Pages
 - [ ] Localizar 2 avatares externos de testimonios (Miguel y María Sofía)
 - [ ] Self-hostear Material Symbols font (opcional)
-- [ ] Agregar más mini-sitios
+- [ ] Demo #2: Crear mini-sitio `dentisteria-munoz` (clínica dental)
+- [ ] Demo #3: Crear mini-sitio `contratistas-asociados` (contratistas generales)
 
 ## Notas importantes
 
